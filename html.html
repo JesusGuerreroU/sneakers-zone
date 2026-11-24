@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNEAKERS ZONE | Tienda de tenis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">SNEAKERS ZONE</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="btn btn-outline-light ms-lg-3" data-bs-toggle="modal" data-bs-target="#carritoModal">
+        Carrito (<span id="cartCount">0</span>)
+      </button>
+      <button class="btn btn-light ms-2" id="themeBtn">Modo oscuro</button>
+    </div>
+  </div>
+</nav>
+
+<header id="inicio" class="hero text-center">
+  <div class="container">
+    <p class="text-uppercase">Estilo que marca tendencia</p>
+    <h1>SNEAKERS ZONE</h1>
+    <h2>Encuentra tus próximos tenis favoritos</h2>
+    <a href="#productos" class="btn btn-dark btn-lg mt-3">Ver colección</a>
+  </div>
+</header>
+
+<main>
+<section id="productos" class="container py-5">
+  <div class="text-center mb-4">
+    <h2>Nuestra colección</h2>
+    <p>Explora modelos de diferentes marcas y estilos.</p>
+  </div>
+
+  <div class="row g-2 mb-4">
+    <div class="col-md-5">
+      <input id="searchInput" class="form-control" placeholder="Buscar tenis...">
+    </div>
+    <div class="col-md-4">
+      <select id="categoryFilter" class="form-select">
+        <option value="todos">Todas las categorías</option>
+        <option value="deportivos">Deportivos</option>
+        <option value="urbanos">Urbanos</option>
+        <option value="clasicos">Clásicos</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="brandFilter" class="form-select">
+        <option value="todos">Todas las marcas</option>
+        <option value="Nike">Nike</option>
+        <option value="Adidas">Adidas</option>
+        <option value="Puma">Puma</option>
+        <option value="New Balance">New Balance</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-4" id="productList">
+
+    <div class="col-md-6 col-lg-3 product" data-name="Air Max 270" data-category="deportivos" data-brand="Nike">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" class="card-img-top" alt="Tenis deportivos rojos">
+        <div class="card-body">
+          <span class="badge bg-dark">Nike</span>
+          <h5 class="mt-2">Air Max 270</h5>
+          <p>Tenis deportivos para uso diario.</p>
+          <h5>$2,499 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="Air Max 270" data-price="2499">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="Forum Low" data-category="urbanos" data-brand="Adidas">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600" class="card-img-top" alt="Tenis urbanos">
+        <div class="card-body">
+          <span class="badge bg-dark">Adidas</span>
+          <h5 class="mt-2">Forum Low</h5>
+          <p>Diseño urbano y moderno.</p>
+          <h5>$1,899 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="Forum Low" data-price="1899">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="Suede Classic" data-category="clasicos" data-brand="Puma">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600" class="card-img-top" alt="Tenis clásicos">
+        <div class="card-body">
+          <span class="badge bg-dark">Puma</span>
+          <h5 class="mt-2">Suede Classic</h5>
+          <p>Un estilo clásico que nunca pasa de moda.</p>
+          <h5>$1,699 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="Suede Classic" data-price="1699">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="574 Core" data-category="deportivos" data-brand="New Balance">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=600" class="card-img-top" alt="Tenis New Balance">
+        <div class="card-body">
+          <span class="badge bg-dark">New Balance</span>
+          <h5 class="mt-2">574 Core</h5>
+          <p>Comodidad y estilo para todos los días.</p>
+          <h5>$2,199 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="574 Core" data-price="2199">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="Air Force 1" data-category="urbanos" data-brand="Nike">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600" class="card-img-top" alt="Tenis blancos">
+        <div class="card-body">
+          <span class="badge bg-dark">Nike</span>
+          <h5 class="mt-2">Air Force 1</h5>
+          <p>Un modelo urbano muy versátil.</p>
+          <h5>$2,299 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="Air Force 1" data-price="2299">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="Grand Court" data-category="clasicos" data-brand="Adidas">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600" class="card-img-top" alt="Tenis clásicos Adidas">
+        <div class="card-body">
+          <span class="badge bg-dark">Adidas</span>
+          <h5 class="mt-2">Grand Court</h5>
+          <p>Diseño sencillo para cualquier ocasión.</p>
+          <h5>$1,499 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="Grand Court" data-price="1499">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="RS-X" data-category="deportivos" data-brand="Puma">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600" class="card-img-top" alt="Tenis deportivos">
+        <div class="card-body">
+          <span class="badge bg-dark">Puma</span>
+          <h5 class="mt-2">RS-X</h5>
+          <p>Un estilo llamativo y deportivo.</p>
+          <h5>$2,099 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="RS-X" data-price="2099">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 product" data-name="550" data-category="urbanos" data-brand="New Balance">
+      <div class="card product-card h-100">
+        <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600" class="card-img-top" alt="Tenis urbanos">
+        <div class="card-body">
+          <span class="badge bg-dark">New Balance</span>
+          <h5 class="mt-2">550</h5>
+          <p>Inspiración retro con toque moderno.</p>
+          <h5>$2,399 MXN</h5>
+          <button class="btn btn-dark w-100 addCart" data-name="550" data-price="2399">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p id="noResults" class="text-center mt-4" hidden>No se encontraron productos.</p>
+</section>
+
+<section id="nosotros" class="about-section py-5">
+  <div class="container text-center">
+    <h2>Sobre nosotros</h2>
+    <p class="mx-auto mt-3" style="max-width:750px">
+      En SNEAKERS ZONE nos apasiona el mundo de los tenis.
+      Nuestro propósito es ofrecer diferentes estilos, marcas y opciones
+      para que cada persona encuentre el calzado que representa su personalidad.
+      Buscamos combinar comodidad, calidad y tendencias en un solo lugar.
+    </p>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="text-center">
+    <h2>Horarios de atención</h2>
+    <p>Lunes a viernes: 9:00 a.m. – 8:00 p.m.</p>
+    <p>Sábados: 10:00 a.m. – 6:00 p.m.</p>
+    <p>Domingos: 11:00 a.m. – 4:00 p.m.</p>
+  </div>
+</section>
+
+<section id="contacto" class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <h2 class="text-center mb-4">Contáctanos</h2>
+      <form id="contactForm">
+        <input class="form-control mb-3" id="contactName" placeholder="Tu nombre" required>
+        <input class="form-control mb-3" id="contactEmail" type="email" placeholder="Tu correo electrónico" required>
+        <textarea class="form-control mb-3" id="contactMessage" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+        <button class="btn btn-dark w-100">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-dark text-white text-center py-4">
+  <h4>SNEAKERS ZONE</h4>
+  <p>Tu estilo comienza desde tus pies.</p>
+  <div class="mb-2">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a> |
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a> |
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+  </div>
+  <small>© 2026 SNEAKERS ZONE. Sitio de demostración.</small>
+</footer>
+
+<button id="topBtn" title="Volver arriba">↑</button>
+
+<div class="modal fade" id="carritoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tu carrito</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItems"></div>
+        <hr>
+        <h5>Total: $<span id="cartTotal">0</span> MXN</h5>
+        <form id="checkoutForm">
+          <input class="form-control my-2" id="buyerName" placeholder="Nombre completo" required>
+          <input class="form-control my-2" id="buyerEmail" type="email" placeholder="Correo electrónico" required>
+          <button class="btn btn-dark w-100 mt-2" type="submit">Finalizar pedido</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="siteToast" class="toast">
+    <div class="toast-body" id="toastMessage">Producto agregado.</div>
+  </div>
+</div>
+
+<div id="thankYou" class="thank-you" hidden>
+  <div class="container text-center">
+    <h1>¡Gracias por tu compra!</h1>
+    <p>Tu pedido de demostración se registró correctamente.</p>
+    <button class="btn btn-dark" id="backToStore">Volver a la tienda</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
